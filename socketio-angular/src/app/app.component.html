@@ -1,0 +1,19 @@
+<div class="App">
+  <form [formGroup]="tokenForm" (submit)="submitToken()">
+    <input type="text" placeholder="Enter Token" formControlName="token" />
+    <input type="text" placeholder="Enter Name" formControlName="name" />
+    <input type="text" placeholder="Enter Room" formControlName="room" />
+    <button type="submit">Submit</button>
+  </form>
+  <div class="box">
+    <div class="messages">
+      <div *ngFor="let user of messages">
+        {{user.name}}: {{user.message}}
+      </div>
+    </div>
+    <form [formGroup]="messageForm" class="input-div" (submit)="submitMessage()">
+      <input type="text" placeholder="Type in text" formControlName="message" />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</div>
